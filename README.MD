@@ -4,7 +4,7 @@
 
 ## Usage:
 
-RequestID Middleware with all default configs.
+###### RequestID Middleware with all default configs.
 ```go
 package main
 
@@ -37,12 +37,12 @@ func main() {
 }
 
 ```
-#####Output Logs:
+###### Output Logs:
 ```
 [GIN-debug] 2019-12-16T18:50:49+05:30 [bzQg6wTpL4cdZ9bM] - "GET /"
 [GIN-debug] 2019-12-16T18:50:49+05:30 [bzQg6wTpL4cdZ9bM] - [::1] "GET / HTTP/1.1 200 22.415µs" Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
 ```
-RequestID Middleware with user specified UUID generator function.
+###### RequestID Middleware with user specified UUID generator function.
 ```go
 package main
 
@@ -75,9 +75,11 @@ func main() {
 	router.Run(":8080")
 }
 ```
-#####Output Logs:
+###### Output Logs:
 ```
 [GIN-debug] 2019-12-16T19:02:59+05:30 [01DW7EJYEKRXGJRGWERQ2QHWTZ] - "GET /"
 [GIN-debug] 2019-12-16T19:02:59+05:30 [01DW7EJYEKRXGJRGWERQ2QHWTZ] - [::1] "GET / HTTP/1.1 200 15.569µs" PostmanRuntime/7.20.1 
 
 ```
+
+##### Tip: It's a good practice to pass context to all functions so that we can log with RequestID.
