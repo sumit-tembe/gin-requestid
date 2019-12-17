@@ -2,9 +2,31 @@
 
 [Gin](https://github.com/gin-gonic/gin)'s is a middleware that injects a 'RequestID' into the context and header of each request with enhanced request logging.
 
-## Usage:
+## Contents
+
+- [Installation](#installation)
+- [Quick start](#quick-start)
+
+## Installation
+
+To install Gin package, you need to install Go and set your Go workspace first.
+
+The first need [Go](https://golang.org/) installed (**version 1.11+ is required**), then you can use the below Go command to install Gin & the RequestID Middleware.
+
+```sh
+$ go get -v -u github.com/gin-gonic/gin
+$ go get -v -u github.com/sumit-tembe/gin-requestid
+```
+
+## Quick start
 
 ###### RequestID Middleware with all default configs.
+
+```sh
+# assume the following code is in example.go file
+$ cat example.go
+```
+
 ```go
 package main
 
@@ -37,6 +59,11 @@ func main() {
 }
 
 ```
+```
+# run example.go and visit 0.0.0.0:8080/ on browser
+$ go run example.go
+```
+
 ###### Output Logs:
 ```
 [GIN-debug] 2019-12-16T18:50:49+05:30 [bzQg6wTpL4cdZ9bM] - "GET /"
@@ -75,10 +102,14 @@ func main() {
 	router.Run(":8080")
 }
 ```
+```
+# run example.go and visit 0.0.0.0:8080/ on browser
+$ go run example.go
+```
 ###### Output Logs:
 ```
 [GIN-debug] 2019-12-16T19:02:59+05:30 [01DW7EJYEKRXGJRGWERQ2QHWTZ] - "GET /"
-[GIN-debug] 2019-12-16T19:02:59+05:30 [01DW7EJYEKRXGJRGWERQ2QHWTZ] - [::1] "GET / HTTP/1.1 200 15.569µs" PostmanRuntime/7.20.1 
+[GIN-debug] 2019-12-16T19:02:59+05:30 [01DW7EJYEKRXGJRGWERQ2QHWTZ] - [::1] "GET / HTTP/1.1 200 22.415µs" Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
 
 ```
 
